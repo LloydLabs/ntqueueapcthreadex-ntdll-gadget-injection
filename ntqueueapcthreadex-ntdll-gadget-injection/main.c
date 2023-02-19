@@ -8,8 +8,7 @@ static _NtQueueApcThreadEx NtQueueApcThreadEx = NULL;
 static _NtTestAlert NtTestAlert = NULL;
 
 VOID
-queue_alert_thread_with_gadget
-(
+queue_alert_thread_with_gadget(
     HANDLE hThread,
     LPVOID lpGadget,
     PVOID lpShellcode
