@@ -1,8 +1,5 @@
 #include "gadget.h"
 
-#include <Windows.h>
-#include <psapi.h>
-
 static
 BOOL
 gadget_match_valid(
