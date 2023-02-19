@@ -63,7 +63,6 @@ gadget_find_rand_pop_ret(
                 }
 
                 lpaGadgets[dwGadgetCount++] = lpbCurAddr;
-
                 if (dwGadgetCount == MAX_GADGETS)
                 {
                     break;
