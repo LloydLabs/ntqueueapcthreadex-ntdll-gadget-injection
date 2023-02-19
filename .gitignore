@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/ntqueueapcthreadex-ntdll-gadget-injection.sln
+/ntqueueapcthreadex-ntdll-gadget-injection/Debug
+/ntqueueapcthreadex-ntdll-gadget-injection/Release
+*.vcxproj
+*.filters
+*.user
+/.vs/ntqueueapcthreadex-ntdll-gadget-injection
