@@ -21,7 +21,8 @@ queue_alert_thread_with_gadget
     }
 }
 
-BOOL init_apis(
+BOOL 
+init_apis(
     VOID
 )
 {

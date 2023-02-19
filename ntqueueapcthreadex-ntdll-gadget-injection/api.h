@@ -3,7 +3,6 @@
 #include <Windows.h>
 
 // https://processhacker.sourceforge.io/doc/ntpsapi_8h_source.html
-
 typedef 
 VOID
 (*PPS_APC_ROUTINE)(
