@@ -4,7 +4,7 @@ This novel way of using `NtQueueApcThreadEx` by abusing the `ApcRoutine` and `Sy
 
 1. Allocate shellcode in target process. For best results, this should be used with the [shellcode-plain-sight](https://github.com/LloydLabs/shellcode-plain-sight) project.
 2. Find a random gadget in PE sections matching `IMAGE_SCN_CNT_CODE` and `IMAGE_SCN_MEM_EXECUTE` within `ntdll.dll` in memory.
-3. Setup the `NtQueueApcThreadEx` call, `ApcRoutine` = gadget address chosen randomly, `SystemArgument`` = pointer to shellcode
+3. Setup the `NtQueueApcThreadEx` call, `ApcRoutine` = gadget address chosen randomly, `SystemArgument` = pointer to shellcode
 4. The `NtQueueApcThreadEx` will force the IP to the gadget `ntdll.dll!<random pop r32; ret>`, and return into `SystemArgument1`
 5. ✨tada✨
 
