@@ -55,7 +55,7 @@ gadget_find_rand_pop_ret(
             LPBYTE lpbSectionBase = (LPBYTE)ntMi.lpBaseOfDll + pSectHdr->VirtualAddress;
             LPBYTE lpbSectionEnd = (LPBYTE)lpbSectionBase + pSectHdr->Misc.VirtualSize;
 
-            for (PBYTE lpbCurAddr = (PBYTE)lpbSectionBase; lpbCurAddr < lpbSectionEnd; lpbCurAddr++)
+            for (PBYTE lpbCurAddr = lpbSectionBase; lpbCurAddr < lpbSectionEnd; lpbCurAddr++)
             {
                 if (!gadget_match_valid(lpbCurAddr))
                 {
