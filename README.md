@@ -14,7 +14,7 @@ Upon inspecting the call, unlike traditional APC injection, `ApcRoutine` will si
 
 ## Visualization
 
-![example](https://i.imgur.com/QJ43HuW.jpeg)
+![Visualization of technique](https://i.imgur.com/IplH88H.jpeg)
 
 ## Possible Detection Vectors
 This is likely a bit tricky to detect. Upon inspecting calls to `NtQueueApcThreadEx`, check if any of the arguments point towards executable memory. Another possible detection avenue is to check if `ApcRoutine` points towards an address inside `ntdll` - however this is likely to trigger a lot of false positives.
