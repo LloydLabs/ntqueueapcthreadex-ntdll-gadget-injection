@@ -14,6 +14,11 @@ queue_alert_thread_with_gadget(
     PVOID lpShellcode
 )
 {
+    /**
+    * hThread -> target thread to queue APC thread in
+    * PPS_APC_ROUTINE -> random (pop r32; ret) gadget we found in target DLL space
+    * ApcArgument1 -> pointer of shellcode to return into from gadget
+    **/
     if (NT_SUCCESS(NtQueueApcThreadEx(hThread, NULL, (PPS_APC_ROUTINE)lpGadget, lpShellcode, NULL, NULL) == ERROR_SUCCESS))
     {
         NtTestAlert();
