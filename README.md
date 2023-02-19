@@ -1,4 +1,4 @@
-# NtQueueApcThreadEx NTDLL Gadget Injection
+# 🧪 NtQueueApcThreadEx NTDLL Gadget Injection
 ## Introduction
 This novel way of using `NtQueueApcThreadEx` by abusing the `ApcRoutine` and `SystemArgument[0-3]` parameters by passing a random `pop r32; ret` gadget can be used for stealthy code injection. Within this PoC, the gadget in this case is picked randomly from `ntdll.dll`'s memory region which matches a specific pattern. This means the gadget _returns into_ the shellcode.
 
