@@ -1,1 +1,17 @@
-# ntqueueapcthreadex-ntdll-gadget-injection
+# NtQueueApcThreadEx NTDLL Gadget Injection
+This novel way of using `NtQueueApcThreadEx` by abusing the `ApcRoutine` and `SystemArgument[0-3]` parameters by passing a random `pop r32; ret` can be used for stealthy code injection. Within this PoC, the gadget in this case is picked randomly from the loaded `ntdll.dll` memory region which matches a specific pattern. This means, the gadget _returns into_ the shellcode.
+
+For best results, this should be used with the [shellcode-plain-sight](https://github.com/LloydLabs/shellcode-plain-sight) project.
+
+There are hundreds gadgets which can be used inside `ntdll.dll` (from my build, at least) - making this tricky to detects. With the nature of the call, `SystemArgument1` is simply
+
+Upon inspecting the call, unlike traditional APC injection, `ApcRoutine` will simply point to a legitimate address inside of `ntdll.dll`.
+
+# Visualization
+
+![example](https://i.imgur.com/QJ43HuW.jpeg)
+
+# Possible Detection
+This is likely a bit tricky to detect. Upon inspecting calls to `NtQueueApcThreadEx`, check if any of the arguments point towards executable memory. Another possible detection avenue is to check if `ApcRoutine` points towards an address inside `ntdll` - however this is likely to trigger a lot of false positives.
+
+This technique was originally detailed in Avast's Raspberry Robin writeup [here](https://decoded.avast.io/janvojtesek/raspberry-robins-roshtyak-a-little-lesson-in-trickery/).
