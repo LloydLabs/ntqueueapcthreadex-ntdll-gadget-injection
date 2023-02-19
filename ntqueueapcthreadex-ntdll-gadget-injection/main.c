@@ -47,7 +47,10 @@ init_apis(
     return NtQueueApcThreadEx && NtTestAlert;
 }
 
-int main(int argc, char** argv)
+int main(
+    int argc, 
+    char** argv
+)
 {
     if (!init_apis())
     {
