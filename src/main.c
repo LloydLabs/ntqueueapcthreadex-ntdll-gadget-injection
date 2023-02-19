@@ -44,7 +44,7 @@ init_apis(
         return FALSE;
     }
 
-    return NtQueueApcThreadEx && NtTestAlert;
+    return TRUE;
 }
 
 int main(
