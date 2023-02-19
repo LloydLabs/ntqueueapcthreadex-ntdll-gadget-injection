@@ -70,7 +70,7 @@ int main(
     RtlCopyMemory(lpShellcode, bTestCalcPayload, sizeof(TEST_X86_CALC_EXEC_SC));
 
     // In this example, we'll find a pop r32; ret gadget within kernel32
-    LPCWSTR lpcszTarget = L"kernel32.dll";
+    LPCWSTR lpcszTarget = L"ntdll.dll";
    
     LPVOID lpRandomGadget = gadget_find_rand_pop_ret(GetCurrentProcess(), lpcszTarget);
     if (lpRandomGadget == NULL)
