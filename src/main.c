@@ -52,7 +52,8 @@ init_apis(
     return TRUE;
 }
 
-int main(
+INT 
+main(
     int argc, 
     char** argv
 )
