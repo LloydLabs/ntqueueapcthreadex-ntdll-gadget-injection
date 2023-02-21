@@ -8,7 +8,7 @@ This novel way of using `NtQueueApcThreadEx` by abusing the `ApcRoutine` and `Sy
 4. The `NtQueueApcThreadEx` will force the IP to the gadget `ntdll.dll!<random pop r32; ret>`, and return into `SystemArgument1`
 5. ✨tada✨
 
-There are hundreds gadgets which can be used inside `ntdll.dll` (from my build, at least) - making this tricky to detect. With the nature of the call, `SystemArgument1` is simply
+There are hundreds gadgets which can be used inside `ntdll.dll` (from my build, at least) - making this tricky to detect.
 
 Upon inspecting the call, unlike traditional APC injection, `ApcRoutine` will simply point to a legitimate address inside of `ntdll.dll`.
 
