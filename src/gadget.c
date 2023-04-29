@@ -6,7 +6,7 @@ gadget_match_valid(
     PBYTE pbAddress
 )
 {
-    return (*pbAddress != 0x5C && (*pbAddress & (~0xF)) == 0x50) && *(pbAddress + 1) == 0xC3;
+    return (*pbAddress != 0x5C && (*pbAddress & 0xF0) == 0x50) && *(pbAddress + 1) == 0xC3;
 }
 
 LPVOID
